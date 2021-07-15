@@ -49,15 +49,5 @@
 
   <?php } ?>
   </div>
-  <footer >
-    <div id="footer">
-      <div class="copyright">
-        &copy; Copyright <strong><a href="http://kamarajengg.edu.in/cse.php" target="_blanck">KCET/CSE Dept</a></strong>
-      </div>
-      <div class="credits">
-       Designed by <a href="#">Pirdeep Roshan/</a><a href="#"> Ramkumar/</a><a href="#">Yogesh</a>
-      </div>
-    </div>
-  </footer>
   </body>
 </html>
