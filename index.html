@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>KCET | CGpa Calculator </title>
+      <link rel="stylesheet" href="css/index.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   </head>
+   <body><div>
+    <img src="img/logo.jpeg" class="logo col-sm" ></div>
+      <div class="main">
+      <div class="sub_main">
+         <div class="title-text">
+            <div class="title gpa">
+               Gpa
+            </div>
+            <div class="title cgpa">
+               Cgpa
+            </div>
+         </div>
+         <div class="form-con">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="gpa" checked>
+               <input type="radio" name="slide" id="cgpa">
+               <label for="gpa" class="slide gpa">Gpa</label>
+               <label for="cgpa" class="slide cgpa">Cgpa</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="gpa.php" class="gpa" method="post">
+                  <div class="field">
+                     <select name="dept" id="dept" required="">
+                  <option>---Department---</option>
+                  <option value="cse" >CSE</option>
+                  <option value="ece">ECE</option>
+                  <option value="e&i">EIE</option>
+                  <option value="eee">EEE</option>
+                  <option value="pt">PT</option>
+                  <option value="it">IT</option>
+                  <option value="bt">BT</option>
+                  <option value="mech">MECH</option>
+                  <option value="civil">CIVIL</option>
+                  <option value="ai">AI</option>
+                  <option value="mtr">MTR</option>
+               </select>
+                  </div>
+                  <div class="field">
+                     <select name="sem" id="semester" required="">
+                  <option>---Semester---</option>
+                  <option value="1st">1</option>
+                  <option value="2nd">2</option>
+                  <option value="3th">3</option>
+                  <option value="4th">4</option>
+                  <option value="5th">5</option>
+                  <option value="6th">6</option>
+                  <option value="7th">7</option>
+                  <option value="8th">8</option>
+               </select>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Enter" name="value">
+                  </div>
+                  <div class="cgpa-link">
+                     Will you like to calculate? <a href="">Cgpa</a>
+                  </div><center>
+                  <footer >
+    <div id="footer" style="padding-top: 70px;">
+      <div class="copyright" style="color: #000;">
+        &copy; Copyright <strong><a href="http://kamarajengg.edu.in/cse.php" target="_blanck" style="text-decoration:none;">KCET/CSE Dept</a></strong>
+      </div>
+      <div class="credits">
+       Designed by <a href="#" style="text-decoration:none;">Pirdeep Roshan/</a><a href="#" style="text-decoration:none;"> Ramkumar/</a><a href="#" style="text-decoration:none;">Yogesh</a>
+      </div>
+    </div>
+  </footer></center>
+               </form>
+
+              <!--============================CGPA=============================-->
+
+               <form action="#" class="cgpa">
+                  <div class="field">
+                     <input type="text" id="first-gpa" placeholder="1st-semester" required="">
+                     <input type="text" id="two-gpa" placeholder="2nd-semester" required="">
+                  </div>
+                  <div class="field">
+                     <input type="text" id="three-gpa" placeholder="3rd-semester" required="">
+                     <input type="text" id="four-gpa" placeholder="4th-semester" required="">
+                  </div>
+                  <div class="field">
+                     <input type="text" id="five-gpa" placeholder="5th-semester" required="">
+                     <input type="text" id="six-gpa" placeholder="6th-semester" required="">
+                  </div>
+                  <div class="field">
+                     <input type="text" id="seven-gpa" placeholder="7th-semester" required="">
+                     <input type="text" id="eight-gpa" placeholder="8th-semester" required=""> 
+                  </div><br>
+                  <h3></h3>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Calculate" id="btn_sub">
+                     <input type="submit" value="Restart" id="btn_re">
+                  </div>
+                  <div class="cgpa-link">
+                     Will you like to calculate? <a href="demo.html">Gpa</a>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div></div>
+      <script>
+         const gpaText = document.querySelector(".title-text .gpa");
+         const gpaForm = document.querySelector("form.gpa");
+         const gpaBtn = document.querySelector("label.gpa");
+         const cgpaBtn = document.querySelector("label.cgpa");
+         const cgpaLink = document.querySelector("form .cgpa-link a");
+         cgpaBtn.onclick = (()=>{
+           gpaForm.style.marginLeft = "-50%";
+           gpaText.style.marginLeft = "-50%";
+         });
+         gpaBtn.onclick = (()=>{
+           gpaForm.style.marginLeft = "0%";
+           gpaText.style.marginLeft = "0%";
+         });
+         cgpaLink.onclick = (()=>{
+           cgpaBtn.click();
+           return false;
+         });
+
+         //----------------------------------------CGPA calculation-------------------------------------------
+
+         document.querySelector('#btn_sub').addEventListener('click',() =>{
+
+     let first_gpa=document.querySelector("#first-gpa").value;
+     let two_gpa=document.querySelector("#two-gpa").value;
+     let three_gpa=document.querySelector("#three-gpa").value;
+    let four_gpa=document.querySelector("#four-gpa").value;
+    let five_gpa=document.querySelector("#five-gpa").value;
+    let six_gpa=document.querySelector("#six-gpa").value;
+    let seven_gpa=document.querySelector("#seven-gpa").value;
+    let eight_gpa=document.querySelector("#eight-gpa").value;
+    
+    let total =(
+              parseFloat(first_gpa)+
+              parseFloat(two_gpa)+
+              parseFloat(three_gpa)+
+              parseFloat(four_gpa)+
+              parseFloat(five_gpa)+
+              parseFloat(six_gpa)+
+              parseFloat(seven_gpa)+
+              parseFloat(eight_gpa))/8;
+
+document.querySelector('h3').innerHTML=`TOTAL CGPA = ${total}`
+})
+
+document.querySelector('#btn_re').addEventListener('click',() =>{
+  document.querySelector('h3').innerHTML=`TOTAL CGPA =`
+  document.querySelector('#first-gpa').value='';
+  document.querySelector('#two-gpa').value='';
+  document.querySelector('#three-gpa').value='';
+  document.querySelector('#four-gpa').value='';
+  document.querySelector('#five-gpa').value='';
+  document.querySelector('#six-gpa').value='';
+  document.querySelector('#seven-gpa').value='';
+  document.querySelector('#eight-gpa').value='';
+})
+      </script>
+   </body>
+</html>
