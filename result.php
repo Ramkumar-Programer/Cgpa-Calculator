@@ -10,7 +10,6 @@
 </head>
 <body class="body">
   <div class="container">
-    <img src="img/logo.jpeg" class="logo col-sm-12" ><br>
 <?php 
 
    if (isset($_POST['calculate'])) {
